@@ -266,6 +266,7 @@ $MSBuildArguments += "/p:Build=$RunBuild"
 if (-not $RunBuild) { $MSBuildArguments += "/p:NoBuild=true" }
 $MSBuildArguments += "/p:Pack=$Pack"
 $MSBuildArguments += "/p:Test=$Test"
+if ( $productBuild -and $performDesktopBuild ) { $Sign = $false }
 $MSBuildArguments += "/p:Sign=$Sign"
 $MSBuildArguments += "/p:Publish=$Publish"
 
